@@ -33,8 +33,21 @@ window.carbon = window.carbon || {};
         },
 
         convertShortCodeToData: function(shortcode) {
-            var regex = /\[bc_video video_id="(\d+)" account_id="(\d+)" player_id="(\w+)"\]/;
-            return regex.exec(shortcode);
+            //var regex = /\[bc_video video_id="(\d+)" account_id="(\d+)" player_id="(\w+)"\]/;
+            //parse the shortcode with jQuery and extract the attributes
+            var bcElementString = shortcode.replace('[', '<').replace(']', '>');
+            var bcElement = $.parseHTML(bcElementString);
+            var bcData = [];
+            
+            bcData[0] = shortcode;
+            if(bcElement)
+            {
+                bcData[1] = $(bcElement).attr('video_id');
+                bcData[2] = $(bcElement).attr('account_id');
+                bcData[3] = $(bcElement).attr('player_id');
+            }
+            //return regex.exec(shortcode);
+            return bcData;
         },
 
         resetValue: function() {
