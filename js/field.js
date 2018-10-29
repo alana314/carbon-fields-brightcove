@@ -33,8 +33,6 @@ window.carbon = window.carbon || {};
         },
 
         convertShortCodeToData: function(shortcode) {
-            //var regex = /\[bc_video video_id="(\d+)" account_id="(\d+)" player_id="(\w+)"\]/;
-            //parse the shortcode with jQuery and extract the attributes
             var bcElementString = shortcode.replace('[', '<').replace(']', '>');
             var bcElement = $.parseHTML(bcElementString);
             var bcData = [];
@@ -46,7 +44,7 @@ window.carbon = window.carbon || {};
                 bcData[2] = $(bcElement).attr('account_id');
                 bcData[3] = $(bcElement).attr('player_id');
             }
-            //return regex.exec(shortcode);
+            
             return bcData;
         },
 
