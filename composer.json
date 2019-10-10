@@ -1,9 +1,9 @@
 {
-  "name": "schrapel/carbon-fields-brightcove",
+  "name": "jordan314/carbon-fields-brightcove",
   "type": "wordpress-plugin",
   "license": "MIT",
   "description": "Extends the base Carbon Fields with a Brightcove field.",
-  "homepage": "https://github.com/schrapel/carbon-fields-brightcove",
+  "homepage": "https://github.com/jordan314/carbon-fields-brightcove",
   "authors": [
     {
       "name": "Toby Schrapel",
